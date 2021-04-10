@@ -1,4 +1,4 @@
-# README #
+# UOCIS322 - Project 2 #
 
 A "getting started with Docker" project for CIS 322, Introduction to Software Engineering, at the University of Oregon.
 

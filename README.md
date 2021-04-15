@@ -12,13 +12,13 @@ NOTE: Should you experience a permission error while using Docker on the server,
 * Build the simple flask app image using
 
   ```
-  docker build -t UOCIS-flask-demo .
+  docker build -t your-name-cis322-2 .
   ```
-
+  **Make sure to use a unique name if you're running on testium.**
 * Run the container using
 
   ```
-  docker run -d -p 5000:5000 UOCIS-flask-demo
+  docker run -d -p 5000:5000 your-name-cis322-2
   ```
 NOTE: Make sure to change the port (both in the flask API so that it reads from credentials.init, and here in the run command. This is to ensure that you and your classmates don't end up using the same port and that tests do not interfere with each other.)
 * Launch http://hostname:5000 using web browser and check the output "UOCIS docker demo!".

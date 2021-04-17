@@ -18,22 +18,22 @@ NOTE: Should you experience a permission error while using Docker on the server,
 * Run the container using
 
   ```
-  docker run -d -p 5000:5000 your-name-cis322-2
+  docker run -d -p port:5000 your-name-cis322-2
   ```
-NOTE: Make sure to change the port (both in the flask API so that it reads from credentials.init, and here in the run command. This is to ensure that you and your classmates don't end up using the same port and that tests do not interfere with each other.)
-* Launch http://hostname:5000 using web browser and check the output "UOCIS docker demo!".
+NOTE: Make sure to change the port (both in the flask API so that it reads from `credentials.ini`, and here in the run command. This is to ensure that you and your classmates don't end up using the same port and that tests do not interfere with each other.)
+* Launch `http://hostname:port` using your web browser and check the output "UOCIS docker demo!".
 
 # Tasks
 
 * The goal of this project is to implement the same "file checking" logic that you implemented in Project 1, but using Flask.
 
-* Like Project 1, if a file ("name.html") exists, transmit "200/OK" header followed by that file html. If the file doesn't exist, transmit an error code in the header along with the appropriate page html in the body. You'll do this by creating error handlers that will be (or are) taught in class (refer to the recordings if needed). You'll also create the following two html files with the error messages:
-    * "404.html" will display "File not found!"
-    * "403.html" will display "File is forbidden!"
+* Like Project 1, if a file (`name.html`) exists, transmit `200/OK` header followed by that file html. If the file doesn't exist, transmit an error code in the header along with the appropriate page html in the body. You'll do this by creating error handlers that will be (or are) taught in class (refer to the recordings if needed). You'll also create the following two html files with the error messages:
+    * `404.html` will display "File not found!"
+    * `403.html` will display "File is forbidden!"
 
-* Update your name and email in the Dockerfile.
+* Update your name and email in the `Dockerfile`.
 
-* You will submit your credentials.ini in canvas. It should have information on how we should get your Dockerfile and your git repo. Follow the same structure you found in previous projects when creating the credentials file.
+* You will submit your credentials.ini in canvas. It should have information on how we should get your `Dockerfile` and your git repo. Follow the same structure you found in previous projects when creating the credentials file.
 
 # Grading Rubric
 * If your code works as expected: 100 points.
@@ -42,14 +42,14 @@ NOTE: Make sure to change the port (both in the flask API so that it reads from 
 
 * If none of the functionalities work, 40 points will be given assuming
     * the credentials.ini is submitted with the correct URL of your repo,
-    * the Dockerfile builds without any errors, and
-    * if the two html files (404.html and 403.html) are created in the appropriate location.
+    * the `Dockerfile` builds without any errors, and
+    * if the two html files (`404.html` and `403.html`) are created in the appropriate location.
 
-* If the Dockerfile doesn't build or is missing, 20 points will be docked off.
+* If the `Dockerfile` doesn't build or is missing, 20 points will be docked off.
 
 * If the two html files are missing, 20 points will be docked off.
 
-* If credentials.ini is missing, 0 will be assigned.
+* If `credentials.ini` is not submitted or the repo is not found, 0 will be assigned.
 
 # Basic Docker commands
 
@@ -83,7 +83,7 @@ NOTE: Make sure to change the port (both in the flask API so that it reads from 
   docker build -t <Tag name> path/
   ```
 
-  or just do this if your Dockerfile is in the same directory:
+  or just do this if your `Dockerfile` is in the same directory:
   ```
   docker build -t <Tag Name> .
   ```
@@ -104,7 +104,7 @@ NOTE: Make sure to change the port (both in the flask API so that it reads from 
   docker run -h CONTAINER1 -i -t ubuntu /bin/bash
   ```
 
-  Here, -h is used to specify a container name, -t to start with tty, and -i means interactive. Note: second times will be quick because of caching.
+  Here, `-h` is used to specify a container name, `-t` to start with tty, and `-i` means interactive. Note: second times will be quick because of caching.
 
 * Docker with networking
 
@@ -138,25 +138,25 @@ NOTE: Make sure to change the port (both in the flask API so that it reads from 
 
 # Creating images
 
-* Create a Dockerfile. The name is case sensitive and it has to be "Dockerfile"
+* Create a `Dockerfile`. The name is case sensitive and it has to be `Dockerfile`
 
   ```
   vim Dockerfile
   ```
 
-* The FROM command specifies the base image you are going to use. It can be an existing image, like ubuntu, alpine, debian, etc.
+* The `FROM` command specifies the base image you are going to use. It can be an existing image, like ubuntu, alpine, debian, etc.
 
   ```
    FROM debian
   ```
 
-* CMD command specifies all the commands you need to run
+* `CMD` command specifies all the commands you need to run
 
   ```
    CMD echo hello world
   ```
 
-* Build the image with folder name ("." in this case)
+* Build the image with folder name (`.`` in this case)
 
   ```
    docker build .
@@ -167,7 +167,7 @@ NOTE: Make sure to change the port (both in the flask API so that it reads from 
   Successfully built e2e741ea5f6f  
   ```
 
-* Run the image using the image ID ("e2e741ea5f6f" in this case) and a test name of your choice
+* Run the image using the image ID (`e2e741ea5f6f` in this case) and a test name of your choice
 
   ```
   docker run --name <test name> e2e741ea5f6f

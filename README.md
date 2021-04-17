@@ -5,7 +5,7 @@ A "getting started with Docker" project for CIS 322, Introduction to Software En
 NOTE: This project is going to require Docker, therefore use * testium * instead of the default development server (ix-dev).
 NOTE: Should you experience a permission error while using Docker on the server, email systems and ask them to "add you to the docker group".
 
-# Getting started on this project
+## Getting started
 
 * Go to the web folder in the repository. Read every line of the docker file and the simple flask app.
 
@@ -20,10 +20,10 @@ NOTE: Should you experience a permission error while using Docker on the server,
   ```
   docker run -d -p port:5000 your-name-cis322-2
   ```
-NOTE: Make sure to change the port (both in the flask API so that it reads from `credentials.ini`, and here in the run command. This is to ensure that you and your classmates don't end up using the same port and that tests do not interfere with each other.)
+NOTE: Make sure to specify a free port here.
 * Launch `http://hostname:port` using your web browser and check the output "UOCIS docker demo!".
 
-# Tasks
+## Tasks
 
 * The goal of this project is to implement the same "file checking" logic that you implemented in Project 1, but using Flask.
 
@@ -35,7 +35,7 @@ NOTE: Make sure to change the port (both in the flask API so that it reads from 
 
 * You will submit your credentials.ini in canvas. It should have information on how we should get your `Dockerfile` and your git repo. Follow the same structure you found in previous projects when creating the credentials file.
 
-# Grading Rubric
+## Grading Rubric
 * If your code works as expected: 100 points.
 
 * For every wrong functionality (i.e., (a), (b), and (c) from project 1), 20 points will be docked off.
@@ -51,7 +51,7 @@ NOTE: Make sure to change the port (both in the flask API so that it reads from 
 
 * If `credentials.ini` is not submitted or the repo is not found, 0 will be assigned.
 
-# Basic Docker commands
+## Basic Docker commands
 
 * Get information about docker setup the machine
 
@@ -156,7 +156,7 @@ NOTE: Make sure to change the port (both in the flask API so that it reads from 
    CMD echo hello world
   ```
 
-* Build the image with folder name (`.`` in this case)
+* Build the image with folder name (`.` in this case)
 
   ```
    docker build .
@@ -181,6 +181,6 @@ NOTE: Make sure to change the port (both in the flask API so that it reads from 
 
 For more info refer to: https://docs.docker.com/engine/reference/builder/.
 
-### Credits ###
+## Credits
 
 Michal Young, Ram Durairajan, Steven Walton, Joe Istas.

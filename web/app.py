@@ -6,14 +6,9 @@ from flask import Flask, send_from_directory, abort
 
 app = Flask(__name__)
 
-CAT = """
-     ^ ^
-   =(   )=
-"""
-
 @app.route("/")
-def cat():
-    return CAT
+def hello():
+    return "UOCIS docker demo!\n"
 
 @app.route("/<path:file>")
 def OK(file):
